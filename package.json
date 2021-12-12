@@ -1,0 +1,22 @@
+{
+  "name": "ghost",
+  "version": "4.21.0",
+  "description": "The Ghost configuration for a blog hosted on Railway with an external MySQL database.",
+  "main": "index.js",
+  "author": "stefankuehnel",
+  "license": "MIT",
+  "engines": {
+    "node": "12.X"
+  },
+  "dependencies": {
+    "ghost": "4.21.0",
+    "mysql2": "^2.2.5",
+    "ghost-storage-cloudinary": "^2.1.5",
+    "lyra": "github:TryGhost/lyra#main",
+    "casper": "github:TryGhost/Casper#main"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "chmod +x bin/alter-auth-method && node bin/alter-auth-method && bash bin/cloudinary.sh && bash bin/themes.sh"
+  }
+}
